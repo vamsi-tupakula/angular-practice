@@ -1,0 +1,28 @@
+<h1 [class.text-red]="isRed" (click)="handleTextColor()">Child Component!</h1>
+<p>{{ FromParent }}</p>
+<button (click)="sendMessage()">Send Message</button>
+<br />
+<br />
+<img [src]="imgUrl" alt="" width="500px" />
+<br />
+<br />
+<input
+  type="text"
+  #name
+  (keyup.enter)="keyUp(name.value)"
+  [(ngModel)]="inputVal"
+/>
+<br />
+<p>{{ inputVal }}</p>
+<p>Fruits</p>
+<ul>
+  <li *ngFor="let fruit of fruits">{{ fruit }}</li>
+</ul>
+
+<p>Products</p>
+<ul>
+  <li *ngFor="let product of products">{{ product }}</li>
+</ul>
+<hr />
+<br />
+<app-form />
